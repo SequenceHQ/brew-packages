@@ -60,7 +60,7 @@ sudo -u $mostCommonUser $brew_path install --cask google-cloud-sdk
 
 
 echo "Installing dev packages..."
-sudo -u $mostCommonUser $brew_path brew install coreutils jq yamllint
+sudo -u $mostCommonUser $brew_path install coreutils jq yamllint
 
 echo "Installing Kubernetes packages..."
-sudo -u $mostCommonUser $brew_path brew install kubectl kubectx helm stern
+sudo -u $mostCommonUser $brew_path install kubectl kubectx helm stern

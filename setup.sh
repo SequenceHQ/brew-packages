@@ -62,5 +62,9 @@ sudo -u $mostCommonUser $brew_path install --cask google-cloud-sdk
 echo "Installing dev packages..."
 sudo -u $mostCommonUser $brew_path install coreutils jq yamllint
 
+echo "Installing SRE packages..."
+sudo -u $mostCommonUser $brew_path install terraform terragrunt
+
 echo "Installing Kubernetes packages..."
 sudo -u $mostCommonUser $brew_path install kubectl kubectx helm stern
+

@@ -54,7 +54,7 @@ echo "Running Brew doctor..."
 /usr/bin/su - "${mostCommonUser}" -c "${brew_path} doctor"
 
 echo "Installing casks packages..."
-sudo -u $mostCommonUser $brew_path cask
+sudo -u $mostCommonUser $brew_path tap homebrew/cask
 sudo -u $mostCommonUser $brew_path install --cask authy
 sudo -u $mostCommonUser $brew_path install --cask google-cloud-sdk
 

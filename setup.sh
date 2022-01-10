@@ -66,5 +66,5 @@ echo "Installing SRE packages..."
 sudo -u $mostCommonUser $brew_path install terraform terragrunt
 
 echo "Installing Kubernetes packages..."
-sudo -u $mostCommonUser $brew_path install kubectl kubectx helm stern
+sudo -u $mostCommonUser $brew_path install kubectl kubectx helm stern fluxcd/tap/flux
 

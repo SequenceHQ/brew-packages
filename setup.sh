@@ -68,3 +68,7 @@ sudo -u $mostCommonUser $brew_path install terraform terragrunt
 echo "Installing Kubernetes packages..."
 sudo -u $mostCommonUser $brew_path install kubectl kubectx helm stern
 
+if [[ -f "/Users/${mostCommonUser}/.zshrc" ]]; then
+  cat /Users/${mostCommonUser}/.zshrc | uniq > /Users/${mostCommonUser}/.zshrc.clean && mv /Users/${mostCommonUser}/.zshrc.clean /Users/${mostCommonUser}/.zshrc
+  echo "Trimmed ~/.zshrc"
+fi

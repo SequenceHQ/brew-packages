@@ -60,7 +60,7 @@ sudo -u $mostCommonUser $brew_path install --cask google-cloud-sdk
 
 
 echo "Installing engineering packages..."
-sudo -u $mostCommonUser $brew_path install coreutils jq yamllint adr-tools pre-commit watch c6o/tools/czctl pgcli
+sudo -u $mostCommonUser $brew_path install coreutils jq yamllint adr-tools pre-commit watch c6o/tools/czctl pgcli teleport
 
 echo "Installing SRE packages..."
 sudo -u $mostCommonUser $brew_path install terraform terragrunt

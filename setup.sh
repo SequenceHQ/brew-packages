@@ -59,10 +59,11 @@ sudo -u $mostCommonUser $brew_path install --cask google-cloud-sdk
 
 
 echo "Installing engineering packages..."
-sudo -u $mostCommonUser $brew_path install coreutils jq yamllint adr-tools pre-commit watch c6o/tools/czctl pgcli teleport
+sudo -u $mostCommonUser $brew_path install coreutils jq yamllint adr-tools pre-commit watch c6o/tools/czctl pgcli teleport gawk coreutils
 
 echo "Installing SRE packages..."
-sudo -u $mostCommonUser $brew_path install terraform terragrunt
+sudo -u $mostCommonUser $brew_path tap liamg/tfsec
+sudo -u $mostCommonUser $brew_path install terraform terragrunt terraform-docs tflint tfsec checkov
 
 echo "Installing Kubernetes packages..."
 sudo -u $mostCommonUser $brew_path install kubectl kubectx helm stern

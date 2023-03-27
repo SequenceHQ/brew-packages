@@ -68,7 +68,12 @@ sudo -u $mostCommonUser $brew_path install terraform terragrunt terraform-docs t
 echo "Installing Kubernetes packages..."
 sudo -u $mostCommonUser $brew_path install kubectl kubectx helm stern
 
+
 if [[ -f "/Users/${mostCommonUser}/.zshrc" ]]; then
+
+  # Enable USE_GKE_GCLOUD_AUTH_PLUGIN
+  grep -qxF 'export USE_GKE_GCLOUD_AUTH_PLUGIN=True' /Users/${mostCommonUser}/.zshrc || echo 'export USE_GKE_GCLOUD_AUTH_PLUGIN=True' >> /Users/${mostCommonUser}/.zshrc
+
   cat /Users/${mostCommonUser}/.zshrc | uniq > /Users/${mostCommonUser}/.zshrc.clean && mv /Users/${mostCommonUser}/.zshrc.clean /Users/${mostCommonUser}/.zshrc
   chown ${mostCommonUser}:staff /Users/${mostCommonUser}/.zshrc
   echo "Trimmed ~/.zshrc"

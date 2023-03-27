@@ -69,7 +69,6 @@ echo "Installing Kubernetes packages..."
 sudo -u $mostCommonUser $brew_path install kubectl kubectx helm stern
 
 
-
 if [[ -f "/Users/${mostCommonUser}/.zshrc" ]]; then
 
   # Enable USE_GKE_GCLOUD_AUTH_PLUGIN

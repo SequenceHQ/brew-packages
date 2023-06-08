@@ -59,7 +59,7 @@ sudo -u $mostCommonUser $brew_path install --cask google-cloud-sdk
 
 
 echo "Installing engineering packages..."
-sudo -u $mostCommonUser $brew_path install coreutils jq yq yamllint adr-tools pre-commit watch c6o/tools/czctl pgcli teleport gawk coreutils
+sudo -u $mostCommonUser $brew_path install c6o/tools/czctl coreutils gawk httpie jq pgcli pre-commit teleport watch yamllint yq
 
 echo "Installing SRE packages..."
 sudo -u $mostCommonUser $brew_path tap liamg/tfsec

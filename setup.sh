@@ -55,11 +55,11 @@ echo "Running Brew doctor..."
 
 echo "Installing casks packages..."
 sudo -u $mostCommonUser $brew_path tap homebrew/cask
+sudo -u $mostCommonUser $brew_path tap homebrew/core
 sudo -u $mostCommonUser $brew_path install --cask google-cloud-sdk
 
-
 echo "Installing engineering packages..."
-sudo -u $mostCommonUser $brew_path install c6o/tools/czctl coreutils gawk httpie jq pgcli pre-commit teleport watch yamllint yq
+sudo -u $mostCommonUser $brew_path install c6o/tools/czctl coreutils gawk httpie jq pgcli postgresql pre-commit teleport watch yamllint yq
 
 echo "Installing SRE packages..."
 sudo -u $mostCommonUser $brew_path tap liamg/tfsec

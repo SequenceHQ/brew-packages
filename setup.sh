@@ -63,7 +63,7 @@ sudo -u $mostCommonUser $brew_path install c6o/tools/czctl coreutils gawk httpie
 
 echo "Installing SRE packages..."
 sudo -u $mostCommonUser $brew_path tap liamg/tfsec
-sudo -u $mostCommonUser $brew_path install terraform terragrunt terraform-docs tflint tfsec checkov
+sudo -u $mostCommonUser $brew_path install terraform terragrunt terraform-docs tflint tfsec checkov weaveworks/tap/tfctl
 
 echo "Installing Kubernetes packages..."
 sudo -u $mostCommonUser $brew_path install kubectl kubectx helm stern

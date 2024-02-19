@@ -59,7 +59,7 @@ sudo -u $mostCommonUser $brew_path tap homebrew/core
 sudo -u $mostCommonUser $brew_path install --cask google-cloud-sdk
 
 echo "Installing engineering packages..."
-sudo -u $mostCommonUser $brew_path install coreutils gawk httpie jq pgcli postgresql pre-commit teleport watch yamllint yq
+sudo -u $mostCommonUser $brew_path install cloudflared coreutils gawk httpie jq pgcli postgresql pre-commit teleport watch yamllint yq 
 
 echo "Installing SRE packages..."
 sudo -u $mostCommonUser $brew_path tap liamg/tfsec

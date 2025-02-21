@@ -59,21 +59,13 @@ sudo -u $mostCommonUser $brew_path tap homebrew/core
 sudo -u $mostCommonUser $brew_path install --cask google-cloud-sdk
 
 echo "Installing engineering packages..."
-sudo -u $mostCommonUser $brew_path install cloudflared coreutils gawk httpie jq mkcert nss pgcli postgresql pre-commit teleport watch yamllint yq 
+sudo -u $mostCommonUser $brew_path install cloudflared coreutils gawk jq mkcert nss pgcli postgresql pre-commit watch yamllint yq 
 
 echo "Installing SRE packages..."
 sudo -u $mostCommonUser $brew_path tap liamg/tfsec
 sudo -u $mostCommonUser $brew_path install terraform terragrunt terraform-docs tflint tfsec checkov weaveworks/tap/tfctl
 
-echo "Installing Kubernetes packages..."
-sudo -u $mostCommonUser $brew_path install kubectl kubectx helm stern
-
-
 if [[ -f "/Users/${mostCommonUser}/.zshrc" ]]; then
-
-  # Enable USE_GKE_GCLOUD_AUTH_PLUGIN
-  grep -qxF 'export USE_GKE_GCLOUD_AUTH_PLUGIN=True' /Users/${mostCommonUser}/.zshrc || echo 'export USE_GKE_GCLOUD_AUTH_PLUGIN=True' >> /Users/${mostCommonUser}/.zshrc
-
   cat /Users/${mostCommonUser}/.zshrc | uniq > /Users/${mostCommonUser}/.zshrc.clean && mv /Users/${mostCommonUser}/.zshrc.clean /Users/${mostCommonUser}/.zshrc
   chown ${mostCommonUser}:staff /Users/${mostCommonUser}/.zshrc
   echo "Trimmed ~/.zshrc"

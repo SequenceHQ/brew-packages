@@ -59,11 +59,14 @@ sudo -u $mostCommonUser $brew_path tap homebrew/core
 sudo -u $mostCommonUser $brew_path install --cask google-cloud-sdk
 
 echo "Installing engineering packages..."
-sudo -u $mostCommonUser $brew_path install cloudflared coreutils gawk jq mkcert nss pgcli postgresql pre-commit watch yamllint yq 
+sudo -u $mostCommonUser $brew_path install cloudflared coreutils direnv gawk jq mkcert nss pgcli postgresql pre-commit watch yarn yamllint yq
 
 echo "Installing SRE packages..."
 sudo -u $mostCommonUser $brew_path tap liamg/tfsec
 sudo -u $mostCommonUser $brew_path install terraform terragrunt terraform-docs tflint tfsec checkov weaveworks/tap/tfctl
+
+echo "Installing nvm manually..."
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 
 if [[ -f "/Users/${mostCommonUser}/.zshrc" ]]; then
   cat /Users/${mostCommonUser}/.zshrc | uniq > /Users/${mostCommonUser}/.zshrc.clean && mv /Users/${mostCommonUser}/.zshrc.clean /Users/${mostCommonUser}/.zshrc

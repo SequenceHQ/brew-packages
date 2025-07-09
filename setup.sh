@@ -54,6 +54,7 @@ echo "Running Brew doctor..."
 
 echo "Installing engineering packages..."
 sudo -u $mostCommonUser $brew_path bundle install
+sudo -u $mostCommonUser $brew_path link --force libpq
 
 echo "Installing nvm manually..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash

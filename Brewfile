@@ -12,7 +12,7 @@ brew "mkcert"
 brew "mise"
 brew "nss"
 brew "pgcli"
-brew "postgresql" # Do we really want to install Postgres? Or will this run in a docker container?
+brew "libpq"
 brew "pre-commit" # This is now part of the mise tools dependencies in the `platform-api` repo & could be removed
 brew "watch"
 brew "yarn"
@@ -30,4 +30,3 @@ brew "terraform-docs"
 brew "tflint"
 brew "tfsec"
 brew "checkov"
-# brew "weaveworks/tap/tfctl" # This looks as though it's unmaintained

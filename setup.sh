@@ -40,7 +40,6 @@ if [ -n "${get_path_cmd}" ]; then
     /usr/bin/su - "${mostCommonUser}" -c "${get_path_cmd}"
 fi
 
-
 echo "Running Brew update..."
 /usr/bin/su - "${mostCommonUser}" -c "${brew_path} update --force"
 
@@ -53,17 +52,8 @@ echo "Running Brew cleanup..."
 echo "Running Brew doctor..."
 /usr/bin/su - "${mostCommonUser}" -c "${brew_path} doctor"
 
-echo "Installing casks packages..."
-sudo -u $mostCommonUser $brew_path tap homebrew/cask
-sudo -u $mostCommonUser $brew_path tap homebrew/core
-sudo -u $mostCommonUser $brew_path install --cask google-cloud-sdk
-
 echo "Installing engineering packages..."
-sudo -u $mostCommonUser $brew_path install cloudflared coreutils direnv gawk jq mkcert nss pgcli postgresql pre-commit watch yarn yamllint yq
-
-echo "Installing SRE packages..."
-sudo -u $mostCommonUser $brew_path tap liamg/tfsec
-sudo -u $mostCommonUser $brew_path install terraform terragrunt terraform-docs tflint tfsec checkov weaveworks/tap/tfctl
+sudo -u $mostCommonUser $brew_path bundle install
 
 echo "Installing nvm manually..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
